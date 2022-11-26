@@ -3,7 +3,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { RecoilRoot } from 'recoil';
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
 import GlobalStyle from './styles/GlobalStyle';
-import { Home } from './pages/Home';
+import { HomePage } from './pages/HomePage';
+import { SearchPage } from './pages/SearchPage';
 
 const queryClient = new QueryClient();
 
@@ -14,7 +15,7 @@ function App() {
         <GlobalStyle />
         <RecoilRoot>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<HomePage />} />
           </Routes>
         </RecoilRoot>
       </QueryClientProvider>
