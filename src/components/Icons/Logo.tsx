@@ -1,6 +1,6 @@
 export default function Logo() {
   return (
-    <button style={{ marginLeft: '20px' }}>
+    <button style={{ marginLeft: '28px' }}>
       {/* <?xml version="1.0" encoding="utf-8"?> */}
       <svg viewBox="409.289 277.787 512 114.301" width="90" height="20" xmlns="http://www.w3.org/2000/svg">
         <g

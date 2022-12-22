@@ -1,12 +1,27 @@
 import styled from 'styled-components';
+import { SearchIcon } from '../Icons/SearchIcon';
 
 export default function SearchBar() {
   return (
-    <form style={{ marginLeft: '220px' }}>
+    <Form>
       <InputBox placeholder="검색" width={300} height={40} />
-    </form>
+      <SearchIcon className="search-icon" />
+    </Form>
   );
 }
+
+const Form = styled.form`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 220px;
+  position: relative;
+
+  & .search-icon {
+    position: absolute;
+    right: 10px;
+  }
+`;
 
 const InputBox = styled.input`
   width: 520px;

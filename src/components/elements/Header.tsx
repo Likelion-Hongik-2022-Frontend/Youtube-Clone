@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import Logo from '../Icons/Logo';
-import Menu from '../Icons/Menu';
+import MenuIcon from '../Icons/MenuIcon';
 import SearchBar from './SearchBar';
 
 export function Header() {
   return (
     <Wrapper>
-      <Menu />
+      <MenuIcon />
       <Logo />
       <SearchBar />
     </Wrapper>

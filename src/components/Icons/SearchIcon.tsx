@@ -1,21 +1,19 @@
-export default function Menu() {
+export function SearchIcon({ className }: any) {
   return (
-    <button>
+    <button className={className}>
       <svg
         fill="none"
         height="24"
         shapeRendering="geometricPrecision"
-        stroke="currentColor"
+        stroke="#959494"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="1.5"
         viewBox="0 0 24 24"
         width="24"
       >
-        <path d="M21 10H3" />
-        <path d="M21 6H3" />
-        <path d="M21 14H3" />
-        <path d="M21 18H3" />
+        <path d="M11 17.25a6.25 6.25 0 110-12.5 6.25 6.25 0 010 12.5z" />
+        <path d="M16 16l4.5 4.5" />
       </svg>
     </button>
   );
