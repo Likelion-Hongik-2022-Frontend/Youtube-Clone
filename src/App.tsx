@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import Board from './components/Board';
 import NavBar from './components/NavBar';
+import dotenv from 'dotenv';
 
 const Container = styled.div`
 	display: flex;
@@ -97,11 +98,9 @@ function App() {
 	const [video_arr, setVideoArr] = useState<any[]>([]);
 
 	useEffect(() => {
-		axios
-			.get('https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&chart=mostPopular&maxResults=50&regionCode=KR&key=AIzaSyCpWT0TS9BR_Lc_KUGDE2tLT3A_-QTiPNQ')
-			.then(function (response) {
-				setVideoArr(response.data.items);
-			});
+		axios.get('https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&chart=mostPopular&maxResults=50&regionCode=KR&key=process.env.REACT_APP_YOUTUBE_API_KEY').then(function (response) {
+			setVideoArr(response.data.items);
+		});
 	}, []);
 
 	return (
