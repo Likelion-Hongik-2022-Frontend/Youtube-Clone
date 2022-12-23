@@ -96,16 +96,6 @@ function App() {
 	const tag_arr = ['전체', '음악', '게임', '믹스', '실시간'];
 	const [video_arr, setVideoArr] = useState<any[]>([]);
 
-	const onSubmit = (search) => {
-		axios
-			.post('https://developers.google.com/apis-explorer/#p/youtube/v3/youtube.search.list', {
-				params: {
-					part: 'snippet',
-					q: search
-				}
-			})
-			.then(function (response) {});
-	};
 	useEffect(() => {
 		axios
 			.get('https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&chart=mostPopular&maxResults=50&regionCode=KR&key=AIzaSyCpWT0TS9BR_Lc_KUGDE2tLT3A_-QTiPNQ')
