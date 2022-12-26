@@ -16,6 +16,7 @@ function App() {
         <RecoilRoot>
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/search" element={<SearchPage />} />
           </Routes>
         </RecoilRoot>
       </QueryClientProvider>

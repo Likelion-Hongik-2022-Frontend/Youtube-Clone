@@ -4,7 +4,7 @@ import { SearchIcon } from '../Icons/SearchIcon';
 export default function SearchBar() {
   return (
     <Form>
-      <InputBox placeholder="검색" width={300} height={40} />
+      <InputBox placeholder="검색" autoFocus={true} width={300} height={40} />
       <SearchIcon className="search-icon" />
     </Form>
   );
@@ -19,7 +19,7 @@ const Form = styled.form`
 
   & .search-icon {
     position: absolute;
-    right: 10px;
+    right: 12px;
   }
 `;
 
