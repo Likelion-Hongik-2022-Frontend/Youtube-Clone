@@ -63,7 +63,7 @@ function Board({ video }: any) {
 	const channelTitle = video['snippet']['channelTitle'];
 	const channelId = video['snippet']['channelId'];
 	useEffect(() => {
-		axios.get(`https://www.googleapis.com/youtube/v3/channels?id=${channelId}&part=snippet&key=AIzaSyCpWT0TS9BR_Lc_KUGDE2tLT3A_-QTiPNQ`).then(function (response) {
+		axios.get(`https://www.googleapis.com/youtube/v3/channels?id=${channelId}&part=snippet&key=${process.env.REACT_APP_YOUTUBE_API_KEY}`).then(function (response) {
 			setChannelUrl(response.data.items[0].snippet.thumbnails.default.url);
 		});
 	}, []);
@@ -94,7 +94,7 @@ function Board({ video }: any) {
 	}
 	return (
 		<Wrapper>
-			<Img src={img_src} />
+			<Img src={img_src ? img_src : ''} />
 			<Container>
 				<ChannelImg src={channelUrl} />
 				<Box>

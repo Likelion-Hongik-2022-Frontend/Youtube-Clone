@@ -4,7 +4,6 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import Board from './components/Board';
 import NavBar from './components/NavBar';
-import dotenv from 'dotenv';
 
 const Container = styled.div`
 	display: flex;
@@ -98,9 +97,11 @@ function App() {
 	const [video_arr, setVideoArr] = useState<any[]>([]);
 
 	useEffect(() => {
-		axios.get('https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&chart=mostPopular&maxResults=50&regionCode=KR&key=process.env.REACT_APP_YOUTUBE_API_KEY').then(function (response) {
-			setVideoArr(response.data.items);
-		});
+		axios
+			.get(`https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&chart=mostPopular&maxResults=50&regionCode=KR&key=${process.env.REACT_APP_YOUTUBE_API_KEY}`)
+			.then(function (response) {
+				setVideoArr(response.data.items);
+			});
 	}, []);
 
 	return (
@@ -109,23 +110,23 @@ function App() {
 			<div>
 				<Wrapper>
 					<Logo>
-						<img alt='logo' src='./img/logo_light.png' />
+						<img alt='logo' src={process.env.PUBLIC_URL + '/img/logo_light.png'} />
 					</Logo>
 					<Search>
 						<input type='text' placeholder='검색' />
 						<button type='submit'>
-							<img src='./img/search.png' />
+							<img src={process.env.PUBLIC_URL + '/img/search.png'} />
 						</button>
 					</Search>
 				</Wrapper>
 				<Tag>
 					{Object.keys(tag_arr).map((i) => (
-						<TagBtn>{tag_arr[parseInt(i)]}</TagBtn>
+						<TagBtn key={i}>{tag_arr[parseInt(i)]}</TagBtn>
 					))}
 				</Tag>
 				<Content>
 					{Object.keys(video_arr).map((i) => (
-						<Board video={video_arr[parseInt(i)]}></Board>
+						<Board key={i} video={video_arr[parseInt(i)]}></Board>
 					))}
 				</Content>
 			</div>

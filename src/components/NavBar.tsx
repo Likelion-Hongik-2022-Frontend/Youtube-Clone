@@ -33,26 +33,26 @@ function NavBar() {
 	return (
 		<Wrapper>
 			<MenuBtn>
-				<img alt='tab' src='./img/hamburger.png' />
+				<img alt='tab' src={process.env.PUBLIC_URL + '/img/hamburger.png'} />
 			</MenuBtn>
 			<MenuBtn>
-				<img alt='home' src='./img/youtube_home.png' />
+				<img alt='home' src={process.env.PUBLIC_URL + '/img/youtube_home.png'} />
 				<span>홈</span>
 			</MenuBtn>
 			<MenuBtn>
-				<img alt='shorts' src='./img/youtube_shorts.png' />
+				<img alt='shorts' src={process.env.PUBLIC_URL + '/img/youtube_shorts.png'} />
 				<span>Shorts</span>
 			</MenuBtn>
 			<MenuBtn>
-				<img alt='subscribe' src='./img/youtube_subscribe.png' />
+				<img alt='subscribe' src={process.env.PUBLIC_URL + '/img/youtube_subscribe.png'} />
 				<span>구독</span>
 			</MenuBtn>
 			<MenuBtn>
-				<img alt='originals' src='./img/youtube_originals.png' />
+				<img alt='originals' src={process.env.PUBLIC_URL + '/img/youtube_originals.png'} />
 				<span>Originals</span>
 			</MenuBtn>
 			<MenuBtn>
-				<img alt='music' src='./img/youtube_music.png' />
+				<img alt='music' src={process.env.PUBLIC_URL + '/img/youtube_music.png'} />
 				<span>Youtube Music</span>
 			</MenuBtn>
 		</Wrapper>
