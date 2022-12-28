@@ -67,7 +67,6 @@ function Board({ video }: any) {
 			setChannelUrl(response.data.items[0].snippet.thumbnails.default.url);
 		});
 	}, []);
-	console.log(channelUrl);
 	const date = new Date(video['snippet']['publishedAt']);
 	const today = new Date();
 	const diffDate = today.getTime() - date.getTime();
