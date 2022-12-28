@@ -23,5 +23,5 @@ const Wrapper = styled.div`
   top: 0;
   padding: 16px;
   z-index: 1;
-  /* background-color: #dcdcdc; */
+  background-color: white;
 `;

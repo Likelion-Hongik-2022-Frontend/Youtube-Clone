@@ -5,16 +5,18 @@ import { Column, Row } from '../Wrapper';
 export function Card({ thumbnailImageUrl, profileImageUrl, title, channelName, viewCount, time }: CardProps) {
   return (
     <Wrapper>
-      <img src="https://i.ytimg.com/vi/vRUocR_wPVk/sddefault.jpg" alt="썸네일 이미지" />
+      <img src={thumbnailImageUrl} alt="썸네일 이미지" />
       <Column>
         <InfoArea>
-          <img src="https://i.ytimg.com/vi/vRUocR_wPVk/sddefault.jpg" alt="프로필 사진" />
-          <TitleArea>hiaklsdjfklbj</TitleArea>
+          <img src={profileImageUrl} alt="프로필 사진" />
+          <TitleArea>{title}</TitleArea>
           <MoreIcon />
         </InfoArea>
-        <ChannelName>name</ChannelName>
+        <ChannelName>{channelName}</ChannelName>
         <Row>
-          <ViewInfo>조회수 17만회 &#183; 10분 전</ViewInfo>
+          <ViewInfo>
+            {viewCount}회 &#183; {time}
+          </ViewInfo>
         </Row>
       </Column>
     </Wrapper>
@@ -26,6 +28,7 @@ const Wrapper = styled.div`
   height: 250px;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 
   img {
     width: 100%;
@@ -36,9 +39,9 @@ const Wrapper = styled.div`
 `;
 
 const InfoArea = styled.div`
-  margin-top: 12px;
+  margin-top: 6px;
   display: flex;
-  font-size: 1rem;
+  font-size: 0.9rem;
   gap: 12px;
   align-items: flex-start;
 
@@ -56,17 +59,19 @@ const TitleArea = styled.div`
   width: 204px;
   height: 40px;
   font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
 const ChannelName = styled.div`
   margin-top: 6px;
-  font-size: 0.8rem;
+  font-size: 12px;
   padding-left: 48px;
   color: #606060;
 `;
 
 const ViewInfo = styled.div`
-  font-size: 0.8rem;
+  font-size: 12px;
   padding-left: 48px;
   color: #606060;
 

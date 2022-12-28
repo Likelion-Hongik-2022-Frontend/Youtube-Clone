@@ -15,4 +15,18 @@ export interface CardProps {
   time: string;
 }
 
-export interface IVideos {}
+export interface IVideos {
+  etag: string;
+  items: any;
+  kind: string;
+  nextPageToken: string;
+  pagInfo: Object;
+}
+
+// export interface IVideoItems {
+//   etag: string;
+//   id: string;
+//   kind: string;
+//   snippet: Object;
+//   statistics: Object;
+// }

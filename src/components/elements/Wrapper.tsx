@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { WrapperProps } from '../../interface';
 
 export const Section = styled.div`
-  margin-top: 60px;
+  margin-top: 80px;
   width: 100%;
   height: 100%;
 `;
