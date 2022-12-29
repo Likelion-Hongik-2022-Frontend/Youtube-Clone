@@ -1,8 +1,8 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import GlobalStyle from './GlobalStyle';
-import Home from './pages/Home';
-import Search from './pages/Search';
+import HomePage from './pages/HomePage';
+import SearchPage from './pages/SearchPage';
 import { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from './theme';
 
@@ -12,8 +12,8 @@ function App() {
 			<ThemeProvider theme={lightTheme}>
 				<GlobalStyle />
 				<Routes>
-					<Route path='/' element={<Home />} />
-					<Route path='/search' element={<Search />} />
+					<Route path='/' element={<HomePage />} />
+					<Route path='/search' element={<SearchPage />} />
 				</Routes>
 			</ThemeProvider>
 		</BrowserRouter>
