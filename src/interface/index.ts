@@ -7,12 +7,12 @@ export interface WrapperProps {
 }
 
 export interface CardProps {
-  thumbnailImageUrl: string;
-  profileImageUrl: string;
-  title: string;
-  channelName: string;
-  viewCount: string;
-  time: string;
+  thumbnailImageUrl?: string;
+  profileImageUrl?: string;
+  title?: string;
+  channelName?: string;
+  viewCount?: string;
+  time?: string;
 }
 
 export interface IVideos {

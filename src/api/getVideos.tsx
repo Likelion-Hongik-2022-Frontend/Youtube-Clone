@@ -11,3 +11,12 @@ export const getVideos = () => {
       return res.data;
     });
 };
+
+export const getSearchData = (inputWord: string) => {
+  return client
+    .get(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=800&q=${inputWord}&key=${API_KEY}`)
+    .then((res) => {
+      // console.log(res);
+      return res.data;
+    });
+};

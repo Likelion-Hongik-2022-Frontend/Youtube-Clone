@@ -1,20 +1,29 @@
-import { getVideos } from '../api/getVideos';
+import { getSearchData, getVideos } from '../api/getVideos';
 import { useQuery } from '@tanstack/react-query';
 import { Header } from '../components/elements/Header';
 import { Card } from '../components/elements/HomePage/Card';
 import { Section } from '../components/elements/Wrapper';
-import { useState } from 'react';
-import { IVideos } from '../interface';
 import styled from 'styled-components';
+import { searchWordState } from '../states';
+import { useRecoilState } from 'recoil';
+import { useDebounce } from '../hooks/useDebounce';
 
 /* thumbnailImageUrl, profileImageUrl, title, channelName, viewCount, time */
 
 export function HomePage() {
   const { isLoading: isVideoLoading, data: videoData } = useQuery<any, any>(['videos'], getVideos);
-  // const videoItems = videoData?.items;
-  const time = Date.now();
-  // console.log(time);
-  console.log(videoData?.items[0].snippet.publishedAt);
+  const [searchWord, setSearchWord] = useRecoilState(searchWordState);
+  const debouncedSearchWord = useDebounce(searchWord, 1000);
+  console.log(debouncedSearchWord);
+
+  const searchData = async () => {
+    // await getSearchData(debouncedSearchWord);
+  };
+
+  // searchData();
+
+  // const time = Date.now();
+  // console.log(videoData?.items[0].snippet.publishedAt);
 
   return (
     <>
@@ -22,8 +31,6 @@ export function HomePage() {
       <Section>
         <ContentsWrapper>
           {videoData?.items.map((item: any) => {
-            console.log(item);
-
             return (
               <Card
                 key={item.id}
